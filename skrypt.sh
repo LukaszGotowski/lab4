@@ -1,9 +1,9 @@
 #!/bin/bash
-if [[ $1 == "--date"]]; then
+if [[ $d == "--date" || $d == "-d" ]]; then
 data="$(date)"
 echo $data
 
-elif [[ $1 == "--logs"]]; then
+elif [[ $d == "--logs" || $d == "-l" ]]; then
 for ((i=1; i<=100; i++)); do
       fn="log$i.txt"
       echo -e "Nazwa pliku to : $fn\nNazwa skryptu to: $0\nData: $(date)" > $fn
@@ -14,7 +14,8 @@ for ((i=1; i<=$liczba; i++)); do
       echo -e "Nazwa pliku to : $fn\nNazwa skryptu to: $0\nData: $(date)" > $fn
     done
 
-elif [[ $1 == "--help"]]; then
+elif [[ $d == "--help" || $d == "-h" ]]; then
 echo "Opcje : "
-echo " --date   Wyświetla aktualną datę"
-echo " --logs   Tworzy x plików logx.txt, [nazwa pliku --logs x], x - liczba plików"
+echo " -d  --date   Wyświetla aktualną datę"
+echo " -h  --help   Wyświetla pomoc"
+echo " -l  --logs   Tworzy x plików logx.txt, [nazwa pliku --logs x], x - liczba plików"
