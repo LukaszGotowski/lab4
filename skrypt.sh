@@ -23,3 +23,23 @@ elif [[ $d == "--help" || $d == "-h" ]]; then
 elif [[ $d == "--init" ]]; then
     git clone https://github.com/LukaszGotowski/lab4.git
     export PATH="$PATH:$(pwd)/lab4" 
+
+elif [[ $d == "--error" || $d == "-e" ]]; then
+    if [[ $2 =~ ^[0-9]+$ ]]; then
+        for ((i=1; i<=$2; i++)); do
+            dir="error$i"
+            mkdir -p $dir
+            fn="$dir/error$i.txt"
+            echo -e "Nazwa pliku to: $fn\nNazwa skryptu to: $0\nData: $(date)" > $fn
+        done
+    else
+        for ((i=1; i<=100; i++)); do
+            dir="error$i"
+            mkdir -p $dir
+            fn="$dir/error$i.txt"
+            echo -e "Nazwa pliku to: $fn\nNazwa skryptu to: $0\nData: $(date)" > $fn
+    done
+    fi
+else
+    echo "Bledna opcja $d"
+fi
