@@ -17,6 +17,7 @@ elif [[ $d == "--logs" || $d == "-l" ]]; then
 elif [[ $d == "--help" || $d == "-h" ]]; then
     echo "Opcje : "
     echo " -d  --date   Wyświetla aktualną datę"
+    echo " -e  --error  Tworzy pliki errorx.txt w katalogu errorx, [nazwa pliku --error x], x - liczba plików"
     echo " -h  --help   Wyświetla pomoc"
     echo " -l  --logs   Tworzy x plików logx.txt, [nazwa pliku --logs x], x - liczba plików"
 
